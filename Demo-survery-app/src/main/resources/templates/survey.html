@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Survey</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<h1>Survey on Well-being</h1>
+<form action="/submit" method="post" th:object="${survey}">
+    <div>
+        <label for="question1">How would you rate your mental well-being?</label>
+        <select id="question1" name="responses[0].answer" required>
+            <option value="Very Poor">Very Poor</option>
+            <option value="Poor">Poor</option>
+            <option value="Average">Average</option>
+            <option value="Good">Good</option>
+            <option value="Excellent">Excellent</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="question2">How often do you exercise?</label>
+        <select id="question2" name="responses[1].answer" required>
+            <option value="Never">Never</option>
+            <option value="Rarely">Rarely</option>
+            <option value="Sometimes">Sometimes</option>
+            <option value="Often">Often</option>
+            <option value="Always">Always</option>
+        </select>
+    </div>
+
+    <button type="submit">Submit Survey</button>
+</form>
+<a href="/">Back to Home</a>
+</body>
+</html>

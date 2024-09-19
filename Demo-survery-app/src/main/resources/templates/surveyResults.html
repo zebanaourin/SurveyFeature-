@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Your Survey Results</title>
+</head>
+<body>
+<h1>Your Survey Results</h1>
+
+<ul>
+    <li th:each="response : ${responses}">
+        <p th:text="${response.question.content}">Question</p>
+        <p th:text="${response.answer}">Answer</p>
+    </li>
+</ul>
+</body>
+</html>

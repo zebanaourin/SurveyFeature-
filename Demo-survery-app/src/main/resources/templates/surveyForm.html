@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Answer Survey</title>
+</head>
+<body>
+<h1 th:text="${survey.title}">Survey Title</h1>
+
+<form th:action="@{/survey/{id}/submit(id=${survey.id})}" method="post">
+    <div th:each="question : ${survey.questions}">
+        <label th:text="${question.content}">Question</label>
+        <input type="text" name="answers" required />
+    </div>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
